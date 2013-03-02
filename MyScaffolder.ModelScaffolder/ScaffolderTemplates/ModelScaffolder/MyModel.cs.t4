@@ -1,0 +1,29 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+<#@ assembly name="System.ComponentModel.DataAnnotations" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data.Entity" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.ComponentModel.DataAnnotations" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace <#= Model.Namespace #>
+{
+    public class <#= Model.ModelName #><# if(!String.IsNullOrEmpty(Model.BaseClassTypeName)) { #>: <#= Model.BaseClassTypeName #> <# } #>{
+        public <#= Model.ModelName #>()<# if(!String.IsNullOrEmpty(Model.BaseClassTypeName)) { #>: base() <# } #>{
+        }
+         
+<#     
+        int i = 0;
+        foreach(string propertyType in Model.PropertiesTypeCollection){
+#>
+        public  <#= propertyType #> <#= Model.PropertiesCollection[i++] #> {get; set;}
+<#
+        }
+#>
+    }
+}

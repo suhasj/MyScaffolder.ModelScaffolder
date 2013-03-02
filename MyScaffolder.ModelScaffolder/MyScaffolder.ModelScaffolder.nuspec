@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MyScaffolder.ModelScaffolder</id>
+    <version>0.1.0-pre</version>
+    <title>Model Scaffold Generator</title>
+    <authors>Suhas</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Model Scaffold Generator</description>
+    <tags>Microsoft Aspnet Scaffolding WebForms</tags>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.Scaffolding.Infrastructure" version="0.1.0-pre" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="MyScaffolder.ModelScaffolder.dll" target="scaffolders" />
+    <file src="ScaffolderTemplates\**\*.t4" target="scaffolders" />
+    <file src="init.ps1" target="tools" />
+  </files>
+</package>
